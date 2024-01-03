@@ -1,0 +1,25 @@
+cc_binary {
+    name: "detcserver",
+
+    srcs: [
+        "log_main.cpp",
+    ],  
+
+    init_rc: ["log.rc"],
+
+    compile_multilib: "first",
+
+    shared_libs: [
+        "libdl",
+        "libsysutils",
+        "libcutils",
+        "libnetutils",
+        "libutils",
+        "libcrypto",
+        "liblog",
+        "libc++",
+        "libutils",
+        "libpcap_bak",
+    ],  
+
+}

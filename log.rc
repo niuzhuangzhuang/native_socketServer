@@ -1,0 +1,12 @@
+service detcserver /system/bin/detcserver
+    class main
+    user shell
+    group log system radio sdcard_rw inet shell media_rw net_raw net_admin net_bw_stats readproc net_bt input
+    capabilities NET_ADMIN NET_RAW
+    socket detcserver stream 666 shell log
+
+on property:detc.logcat.server=true
+    start detcserver
+
+on property:detc.logcat.server=false
+    stop detcserver
